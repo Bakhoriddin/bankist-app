@@ -82,10 +82,6 @@ const formatMovements = function(date, locale) {
   if(daysPassed === 0) return 'Today';
   if(daysPassed === 1) return 'Yesterday';
   if(daysPassed <= 7) return `${daysPassed} days ago`;
-  // const day = `${date.getDate()}`.padStart(2, 0);
-  // const month = `${date.getMonth() + 1}`.padStart(2, 0);
-  // const year = date.getFullYear();
-  // return `${day}/${month}/${year}`;
   return new Intl.DateTimeFormat(locale).format(date);
 }
 
@@ -215,16 +211,8 @@ btnLogin.addEventListener('click', function(e) {
       day: 'numeric',
       month: 'numeric',
       year: 'numeric',
-      // weekday: 'long',
     }
-    // const locale = navigator.language;
     labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(now);
-    // const day = `${now.getDate()}`.padStart(2, 0);
-    // const month = `${now.getMonth() + 1}`.padStart(2, 0);
-    // const year = now.getFullYear();
-    // const hour = `${now.getHours()}`.padStart(2, 0);
-    // const min = `${now.getMinutes()}`.padStart(2, 0);
-    // labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
 
     // Clear input fields
     inputLoginPin.value = inputLoginUsername.value = '';
